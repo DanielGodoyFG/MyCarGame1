@@ -5039,6 +5039,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1513184175106648073, guid: 0f61b7a17680c98439c65806c7d0058d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3332721077868923689, guid: 0f61b7a17680c98439c65806c7d0058d, type: 3}
       propertyPath: m_Name
       value: Kart
