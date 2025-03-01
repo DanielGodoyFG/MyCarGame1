@@ -151,6 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7709785488052211692}
+  - component: {fileID: 8991709503390059709}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Untagged
@@ -175,6 +176,33 @@ Transform:
   - {fileID: 5620795287657139777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8991709503390059709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332721077868923689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5b93b3ecf363341b5befbe68d69ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerzaMotor: 0
+  fuerzaFrenado: 0
+  anguloGiro: 0
+  wheelFL: {fileID: 4702303676498663858}
+  wheelFR: {fileID: 8814859388488355167}
+  wheelBL: {fileID: 4321049442765635012}
+  wheelBR: {fileID: 6972821603748134715}
+  transFL: {fileID: 7378261078609217619}
+  transBL: {fileID: 2073345094934144825}
+  transBR: {fileID: 4516067958049944558}
+  transFR: {fileID: 6958927139851872210}
+  maxSpeed: 0
+  vueltas: 0
+  indexCheckPoint: 0
+  traccion: 
 --- !u!1 &4346496755494015340
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +453,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2297425034801156755, guid: cd322809917242543ace17db3f527ca5, type: 3}
+--- !u!4 &2073345094934144825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6825978900567687768, guid: cd322809917242543ace17db3f527ca5, type: 3}
+  m_PrefabInstance: {fileID: 4432457084621085329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2437070479056667629 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2040542448765327740, guid: cd322809917242543ace17db3f527ca5, type: 3}
@@ -455,6 +488,11 @@ MeshCollider:
 --- !u!4 &4182147810277047674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd322809917242543ace17db3f527ca5, type: 3}
+  m_PrefabInstance: {fileID: 4432457084621085329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4516067958049944558 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8993956897520883329, guid: cd322809917242543ace17db3f527ca5, type: 3}
   m_PrefabInstance: {fileID: 4432457084621085329}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4714494888662996730 stripped
@@ -516,6 +554,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6329158148709259305, guid: cd322809917242543ace17db3f527ca5, type: 3}
+--- !u!4 &6958927139851872210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2517420490261070525, guid: cd322809917242543ace17db3f527ca5, type: 3}
+  m_PrefabInstance: {fileID: 4432457084621085329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7378261078609217619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2600941622160583998, guid: cd322809917242543ace17db3f527ca5, type: 3}
+  m_PrefabInstance: {fileID: 4432457084621085329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5299517359353178538
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2348,6 +2348,7 @@ MonoBehaviour:
   - {fileID: 3531741525457812129, guid: 2dd1ebc81acc7cf47bb5108093c1a337, type: 3}
   - {fileID: 3531741525457812129, guid: 5655ab117cfcec8418710d467c16097e, type: 3}
   - {fileID: 3531741525457812129, guid: 9b84088434607ed49ab766e70915833e, type: 3}
+  - {fileID: 3371451011222891396, guid: 387e953021ef23448a310da1a6c763bd, type: 3}
   carRotSpeed: 10
   transitionCarSpeed: 2
   carStatsText:

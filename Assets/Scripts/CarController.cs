@@ -33,8 +33,15 @@ public class CarController : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().centerOfMass = Vector3.down;
-        lucesFreno = GetComponent<MeshRenderer>().materials[2];
-        lucesFreno.DisableKeyword("_EMISSION");
+        if (GetComponent<MeshRenderer>() == null)
+        {
+            lucesFreno = null;
+        }
+        else
+        {
+            lucesFreno = GetComponent<MeshRenderer>().materials[2];
+            lucesFreno.DisableKeyword("_EMISSION");
+        }
         rb = GetComponent<Rigidbody>();
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         lapTimes = new List<TimeSpan>();
@@ -90,13 +97,19 @@ public class CarController : MonoBehaviour
         {
             wheelBL.brakeTorque = fuerzaFrenado;
             wheelBR.brakeTorque = fuerzaFrenado;
-            lucesFreno.EnableKeyword("_EMISSION");
+            if (lucesFreno != null)
+            {
+                lucesFreno.EnableKeyword("_EMISSION");
+            }
         }
         else 
         {
             wheelBL.brakeTorque = 0;
             wheelBR.brakeTorque = 0;
-            lucesFreno.DisableKeyword("_EMISSION");
+            if (lucesFreno != null)
+            {
+                lucesFreno.DisableKeyword("_EMISSION");
+            }
         }
         float speedInKMH = rb.linearVelocity.magnitude * 3.6f;
         lm.speedText.text = speedInKMH.ToString("###00.0") + "Km/h";
