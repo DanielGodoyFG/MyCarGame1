@@ -186,8 +186,14 @@ public class IACar : MonoBehaviour
     {
         Vector3 direction = circuit.nodes[currentNode].position - transform.position;
         float distance = direction.magnitude;
+        if (distance >= distToChange * 1.2f && distance <= distToChange * 1.5f )
+        {
+            ActivateBreak();
+            Invoke("ReleaseBreak", 0.3f);
+        }
         if (distance < distToChange)
         {
+            
             currentNode += 1;
             if (currentNode == circuit.nodes.Count)
             {
@@ -205,13 +211,7 @@ public class IACar : MonoBehaviour
     {
         if (other.gameObject.tag == "BrakeZone")
         {
-            wheelBL.brakeTorque = fuerzaFrenado;
-            wheelBR.brakeTorque = fuerzaFrenado;
-            wheelFL.brakeTorque = fuerzaFrenado;
-            wheelFR.brakeTorque = fuerzaFrenado;
-            wheelBL.motorTorque = 0;
-            wheelBR.motorTorque = 0;
-            lucesFreno.EnableKeyword("_EMISSION");
+            ActivateBreak();
         }
         if (other.gameObject.tag == "CheckPoint")
         {
@@ -248,22 +248,41 @@ public class IACar : MonoBehaviour
             }
         }
     }
+
+    
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "BrakeZone")
         {
-            wheelBL.brakeTorque = 0;
-            wheelBR.brakeTorque = 0;
-            wheelFL.brakeTorque = 0;
-            wheelFR.brakeTorque = 0;
-            wheelBL.motorTorque = fuerzaMotor;
-            wheelBR.motorTorque = fuerzaMotor;
-            lucesFreno.DisableKeyword("_EMISSION");
+            ReleaseBreak();
         }
     }
+
+    
 
     public void AsignPath(PathCircuit camino)
     {
         circuit = camino;
+    }
+    private void ActivateBreak()
+    {
+        wheelBL.brakeTorque = fuerzaFrenado;
+        wheelBR.brakeTorque = fuerzaFrenado;
+        wheelFL.brakeTorque = fuerzaFrenado;
+        wheelFR.brakeTorque = fuerzaFrenado;
+        wheelBL.motorTorque = 0;
+        wheelBR.motorTorque = 0;
+        lucesFreno.EnableKeyword("_EMISSION");
+    }
+    private void ReleaseBreak()
+    {
+        wheelBL.brakeTorque = 0;
+        wheelBR.brakeTorque = 0;
+        wheelFL.brakeTorque = 0;
+        wheelFR.brakeTorque = 0;
+        wheelBL.motorTorque = fuerzaMotor;
+        wheelBR.motorTorque = fuerzaMotor;
+        lucesFreno.DisableKeyword("_EMISSION");
     }
 }
