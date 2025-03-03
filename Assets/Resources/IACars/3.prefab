@@ -761,7 +761,7 @@ MonoBehaviour:
   fuerzaMotor: -1000
   fuerzaFrenado: 10000
   anguloGiro: 45
-  maxAnguloGiro: 0
+  maxAnguloGiro: 45
   wheelFL: {fileID: 260922629556804545}
   wheelFR: {fileID: 6101995527578482581}
   wheelBL: {fileID: 5544279628003508930}
