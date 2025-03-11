@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private CameraController playerCamera;
     public PathCircuit[] raceTracks;
+    [SerializeField] private GameObject[] activatePerTrack;
 
     [SerializeField] PlayableDirector introSequence;
 
@@ -47,6 +48,25 @@ public class LevelManager : MonoBehaviour
                 IACarClone.GetComponent<IACar>().AsignPath(raceTracks[GameManager.instance.raceTrackSelected]);
                 cars.Add(IACarClone);
             }
+        }
+
+        switch (GameManager.instance.raceTrackSelected)
+        {
+            case 0:
+                activatePerTrack[0].SetActive(true);
+                break;
+
+            case 1:
+                activatePerTrack[1].SetActive(true);
+                break;
+
+            case 2:
+                activatePerTrack[2].SetActive(true);
+            break;
+
+            case 3:
+                activatePerTrack[3].SetActive(true);
+                break;
         }
         StartCoroutine(StartRace());
     }
