@@ -209,7 +209,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c46feb6db9b4da4c95262a841519d1f, type: 2}
   - {fileID: 11400000, guid: 36a3135e68f17444199f6ca1a47af19a, type: 2}
   - {fileID: 11400000, guid: 9473852eb7c3d324ab66f997f79f4e05, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: aa23a3b9054030f4f80f874b2be85169, type: 2}
   speedText: {fileID: 1120355876}
   countDownText: {fileID: 834931072}
   posText: {fileID: 424372990}
@@ -243,7 +243,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4200895}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 9473852eb7c3d324ab66f997f79f4e05, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: aa23a3b9054030f4f80f874b2be85169, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -261,6 +261,10 @@ PlayableDirector:
     value: {fileID: 53289146}
   - key: {fileID: -7588333606903212128, guid: 9473852eb7c3d324ab66f997f79f4e05, type: 2}
     value: {fileID: 53289145}
+  - key: {fileID: -1563347442470052812, guid: aa23a3b9054030f4f80f874b2be85169, type: 2}
+    value: {fileID: 53289145}
+  - key: {fileID: 349954914951994268, guid: aa23a3b9054030f4f80f874b2be85169, type: 2}
+    value: {fileID: 53289146}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &4200897
@@ -5778,7 +5782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSelectedByPlayer: CarBlack
-  raceTrackSelected: 2
+  raceTrackSelected: 3
 --- !u!4 &710497335
 Transform:
   m_ObjectHideFlags: 0
@@ -12834,7 +12838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1748572241
 MonoBehaviour:
   m_ObjectHideFlags: 0
