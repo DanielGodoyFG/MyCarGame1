@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 
 public class LevelManager : MonoBehaviour
 {
-    public List<Transform> checkPoins;
+    public List<Transform> checkPoins, checkPoints1, checkPoints2, checkPoints3;
     public List<GameObject> cars;
     public List<GameObject> positionRace;
     public int totalVueltas;
@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject[] activatePerTrack;
 
     [SerializeField] PlayableDirector introSequence;
+    [SerializeField] PlayableAsset [] sequenciasIntro;
 
     [Header("UI")]
     public TextMeshProUGUI speedText;
@@ -29,7 +30,8 @@ public class LevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        introSequence.playableAsset = sequenciasIntro[GameManager.instance.raceTrackSelected];
+        introSequence.Play();
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             int azar = UnityEngine.Random.Range(0, spawnPoints.Length);
@@ -52,20 +54,25 @@ public class LevelManager : MonoBehaviour
 
         switch (GameManager.instance.raceTrackSelected)
         {
+            
             case 0:
                 activatePerTrack[0].SetActive(true);
+                
                 break;
 
             case 1:
                 activatePerTrack[1].SetActive(true);
+                checkPoins = checkPoints1;
                 break;
 
             case 2:
                 activatePerTrack[2].SetActive(true);
-            break;
+                checkPoins = checkPoints2;
+                break;
 
             case 3:
                 activatePerTrack[3].SetActive(true);
+                checkPoins = checkPoints3;
                 break;
         }
         StartCoroutine(StartRace());
